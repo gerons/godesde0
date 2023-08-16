@@ -39,5 +39,6 @@ func main () {
 	// iteraciones.TipoWhile2()
 	// fmt.Println(ejercicios.TabladeMultiplicar())
 	// files.GrabaTabla()
-	files.SumaTabla()
+	// files.SumaTabla()
+	files.LeoArchivo()
 }

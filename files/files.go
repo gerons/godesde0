@@ -4,16 +4,16 @@ import (
 	"godesde0/ejercicios"
 	"os"
 	// "bufio"
-	// "ioutil"
+	"io/ioutil"
 	"fmt"
 )
 
-var filneName string = "./files/txt/tabla.txt"
+var fileName string = "./files/txt/tabla.txt"
 
 func GrabaTabla() {
 	var texto string = ejercicios.TabladeMultiplicar()
 
-	archivo, err := os.Create(filneName)
+	archivo, err := os.Create(fileName)
 
 	if err != nil {
 		fmt.Println("Error al crear el archivo"+err.Error())
@@ -26,7 +26,7 @@ func GrabaTabla() {
 
 func SumaTabla() {
 	var texto string = ejercicios.TabladeMultiplicar()
-	if !Append(filneName, texto) {
+	if !Append(fileName, texto) {
 		fmt.Println("Erro al concatenar contenido")
 	}
 }
@@ -43,4 +43,15 @@ func Append(filen string, texto string) bool {
 
 	arch.Close()
 	return true
+}
+
+func LeoArchivo() {
+	archivo, err := ioutil.ReadFile(fileName)
+
+	if err != nil {
+		fmt.Println("Error al leer archivo"+err.Error())
+		return
+	}
+
+	fmt.Println(string(archivo))
 }
