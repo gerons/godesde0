@@ -3,8 +3,7 @@ package files
 import (
 	"godesde0/ejercicios"
 	"os"
-	// "bufio"
-	"io/ioutil"
+	"bufio"
 	"fmt"
 )
 
@@ -46,12 +45,18 @@ func Append(filen string, texto string) bool {
 }
 
 func LeoArchivo() {
-	archivo, err := ioutil.ReadFile(fileName)
+	archivo, err := os.Open(fileName)
 
 	if err != nil {
 		fmt.Println("Error al leer archivo"+err.Error())
 		return
 	}
 
-	fmt.Println(string(archivo))
+	scanner := bufio.NewScanner(archivo)
+
+	for scanner.Scan() {
+		registro := scanner.Text()
+		fmt.Printf("> %s\n", registro)
+	}
+	archivo.Close()
 }
