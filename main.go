@@ -3,11 +3,13 @@ package main
 import (
 	// "fmt"
 	// "godesde0/ejercicios"
-	"godesde0/files"
+	// "godesde0/files"
 	// "godesde0/variables"
 	// "godesde0/teclado"
 	// "runtime"
 	// "godesde0/iteraciones"
+	// "godesde0/funciones"
+	"godesde0/arreglos_slices"
 )
 
 func main () {
@@ -40,5 +42,10 @@ func main () {
 	// fmt.Println(ejercicios.TabladeMultiplicar())
 	// files.GrabaTabla()
 	// files.SumaTabla()
-	files.LeoArchivo()
+	// files.LeoArchivo()
+	// funciones.Calculos()
+	// funciones.LlamarClosure()
+	// funciones.Exponencia(2)
+	// arreglos_slices.MuestroArreglos()
+	arreglos_slices.MuestroSlices()
 }
